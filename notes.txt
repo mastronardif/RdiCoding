@@ -1,4 +1,4 @@
-stf git gui
+notes for MEAN shit
 
 c:\MongoDB\bin\mongo.exe
 C:\Program Files\MongoDB\Server\3.0\bin
