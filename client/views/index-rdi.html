@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="meetupApp"> 
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>rdi</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+      <style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+  </head>
+  <body>
+
+  
+      <!-- Di View -->
+      <div ng-controller="diController">
+        <h1>There are {{di.length}} di's</h1>
+        <ul>
+          <li ng-repeat="di in di">
+            {{di.name}}
+          </li>
+        </ul>
+        <form ng-submit="createDi()">
+          <input type="text" placeholder="Di name" ng-model="diName"></input>
+          <button type="submit">Di Add</button>
+        </form> 
+      </div>
+    
+  <!-- Rdi's -->
+  <div ng-controller="rdiController">
+   
+           <form ng-submit="createRDi()">
+          <input type="text" placeholder="RDi name" ng-model="rdiName"></input>
+          <button type="submit">RDi Add</button>
+ 
+          <button type="submit" ng-click="testRDi();">RDi Test</button>
+        </form> 
+        
+        <hr/>
+        
+<!--
+        <br/> repeater <br/>
+        
+        <div ng-repeat="n in [42, 42, 43, 43] track by $index">
+            {{n}}
+        </div>
+
+    <li ng-repeat="rdi in rdi">
+    <div style="border-style: solid;">
+        <img src = {{rdi.img}}></img>
+        <br/>        
+          <a href="{{rdi.url}}"> {{rdi.name}} </a>
+        </div>
+    </li>
+    
+    -->
+    
+<table>
+  <tr ng-repeat="rdi in rdi">
+    <td>{{ $index + 1 }}</td>
+    <td>    
+        <img src = {{rdi.img}}></img>
+        <br/>        
+          <a href="{{rdi.url}}" target="blank"> {{rdi.name}} </a>
+    </td>
+    <td><input type="checkbox" name="vehicle" value="Bike"> Mad1
+        <input type="checkbox" name="vehicle" value="Bike"> Happy1
+        <br/>
+        <input type="checkbox" name="vehicle" value="Bike"> Mad2
+        <input type="checkbox" name="vehicle" value="Bike"> Happy2
+                <br/>
+        <input type="checkbox" name="vehicle" value="Bike"> Mad3
+        <input type="checkbox" name="vehicle" value="Bike"> Happy3
+    </td>
+    <td>
+
+    <textarea rows="4" cols="50">
+    What do you want to tell about this video.
+</textarea>
+
+    </td>
+  </tr>
+</table>
+    
+    
+    <!--
+    <br/>fuck<br/>
+    <span  style="color:red"> {{name}}{{rdi.fuck[0].name}}</span> 
+    <br/>fuckyou<br/>
+    <span > Results: {{rdi.fuck}} {{rdi.fuck.length}} p</span>
+-->
+</div>
+
+
+        
+  
+  </div>  
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+
+      <script type="text/javascript" src="/js/app.js"></script>
+      <script type="text/javascript" src="/js/controllers/di-controller.js"></script>
+      <script type="text/javascript" src="/js/controllers/rdi-controller.js"></script>
+  </body>
+</html>
+
+<!-- https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->
