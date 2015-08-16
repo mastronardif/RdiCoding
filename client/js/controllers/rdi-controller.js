@@ -20,7 +20,7 @@ $scope.testRDi = function () {
    [
    //response,
    {"_id":"55b159e061c5976f7b994915"},
-   {name: "zz"}
+   {name: "adsfasfasf zz"}
   ,{name: "zz33"}
   ,{name: "zz22"}
   ]

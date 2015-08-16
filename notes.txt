@@ -1,4 +1,4 @@
-
+stf git gui
 
 c:\MongoDB\bin\mongo.exe
 C:\Program Files\MongoDB\Server\3.0\bin

@@ -33,12 +33,6 @@ console.log(results.length + " results[0] = "+ results[0].name);
 
 })
 
-
-//res.json({name: "wtf22"});
-//return  {name: "wtf"}
-  //Di.find({}, function (err, results) {
-   // res.json(results);
- // });
 }
 
 function log22 (msg) {
