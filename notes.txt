@@ -1,0 +1,23 @@
+
+
+c:\MongoDB\bin\mongo.exe
+C:\Program Files\MongoDB\Server\3.0\bin
+start /d "{path}\bin" c:\MongoDB\bin\mongod.exe --replSet foo --port 27017 --dbpath {path}mongoDataBase\r0
+
+start /d "{path}\bin" c:\MongoDB\bin\mongo.exe 127.0.0.1:27017
+
+
+start /d "C:\Program Files\MongoDB\Server\3.0\bin\mongod.exe" --replSet foo --port 27017 --dbpath {path}mongoDataBase\r0
+
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
+http://docs.mongodb.org/manual/reference/mongo-shell/
+
+findstr /m /c /s /i  " db.collection.find() " *.txt > c:\Fxm\downloads\myverifyplaces.txt
+findstr /m /c /s /i  "Newborn.Reverse.Discharge" *.sql > c:\Fxm\downloads\myverifyplaces.txt
+C:\DATA\db
+C:\Program Files\MongoDB\Server\3.0\bin\mongod.exe
+
+db.rdi.count
+db.dis.remove('')
+db.rdi.find( { } ).limit(5)
+db.rdi.find( {}, {"name": 1, _id: 0})
