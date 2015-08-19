@@ -6,8 +6,32 @@ app.controller('rdiController', ['$scope', '$http', '$resource', function ($scop
   ,{name: "wtf22"}
   ]
 
-    
-$scope.testRDi = function () {
+
+$scope.search = function () {
+    alert( $scope.rdiName);
+
+//$scope.$apply();
+ //"/api/rdi"
+ $http.get("/rdi/fuck")
+       .success(function(response)
+       { 
+        console.log("***response = " +response);  
+
+        $scope.rdi = 
+        //response;
+/**/   
+   [
+   //response,
+   {"_id":"55b159e061c5976f7b994915"},
+   {name: "adsfasfasf zz"}
+  ,{name: "zz33"}
+  ,{name: "zz22"}
+  ]
+/*****/
+    }); 
+}
+  
+$scope.list = function () {
     //alert( $scope);
 
 //$scope.$apply();
