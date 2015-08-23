@@ -8,7 +8,27 @@ app.controller('rdiController', ['$scope', '$http', '$resource', function ($scop
 
 
 $scope.search = function () {
-    alert( $scope.rdiName);
+    var key = $scope.rdiQuery.trim().toLowerCase();
+    
+        //alert("***scope = " + $scope.rdi[0].name + "\n" + $scope.rdi[0].name22); 
+        
+        var results = listWhereCodeEquals(key);
+        //console.log (results);
+        //alert(results[0].name);
+        $scope.rdi = results;
+        
+        /***********
+           [
+   //response,
+   //{"_id":"55b159e061c5976f7b994915"},
+   {name: "me angry at the wind"}
+  ,{name: "mad at the stars"}
+  ,{name: "mad at the door"}
+  ];
+  ************/
+
+  return;
+        
 
 //$scope.$apply();
  //"/api/rdi"
@@ -17,9 +37,8 @@ $scope.search = function () {
        { 
         console.log("***response = " +response);  
 
-        $scope.rdi = 
-        //response;
-/**/   
+        $scope.rdi = response;
+/**
    [
    //response,
    {"_id":"55b159e061c5976f7b994915"},
@@ -27,7 +46,7 @@ $scope.search = function () {
   ,{name: "zz33"}
   ,{name: "zz22"}
   ]
-/*****/
+*****/
     }); 
 }
   
@@ -52,11 +71,18 @@ $scope.list = function () {
 $scope.rdi.fuck  = response; }); 
 }
 
+$scope.saveDescription = function (id,count,textArea) {
+        description=textArea;
+        var args = $scope.rdi[count].name + "\n________\n" + "id="+id + ",  " + "count= "+ count + "\n" + description
+        alert(args);
+    }
+    
+
   $scope.createRDi = function () {
 console.log("__.js$scope.createRDi");
     var di = new Di();
     di.name = $scope.diName;
-    //alert($scope.createDi);
+    //alert($scope.codes); //.rdi[0].name + ' =>' +  $scope.text );
  //$scope.di.push({name: $scope.diName });
 console.log("BB createRDi");
 
@@ -70,11 +96,41 @@ console.log("BB " + sss );
     });
 /**************/
 date = new Date();
-$scope.rdi.push({name: 'new '+ date.getTime()});
-
-//$scope.fuck = 'KKKKK';
-//$scope.rdi.push({fuck: 'new '+ date.getTime()});
+$scope.rdi.push({name: 'neQ '+ date.getTime()});
 
   }
+  
+  
+  
+  // Save
+    $scope.save = function () {
+console.log("__ scope.save = function ()");
+console.log($scope.rdi[0].name);
 
+
+$scope.rdi = '"asdf":"you"';
+
+  }
+  
+  function listWhereCodeEquals(key)
+  {
+    //alert("key = " + key + "\n_______________\n" + $scope.rdi[0].name + "\n" + $scope.rdi[0].name22);
+ 
+    var retval = [];
+    var a = $scope.rdi; //["a", "b", "c"];
+        a.forEach(function(entry) {
+            //console.log(entry.name22.toLowerCase() == key.toLowerCase());
+            //if (entry.name22)
+            if( ('name22' in entry) && (entry.name22.toLowerCase() == key.toLowerCase()) )
+            {
+                // append new value to the array
+                retval.push(entry);
+            }
+        });
+        
+        //alert("list search item 0 "+ retval.length);
+        //console.log(retval);
+    return retval;
+  }
+  
 }]);

@@ -44,9 +44,15 @@ table tr:nth-child(even) {
            <form ng-submit="createRDi()">
           <input type="text" placeholder="RDi name" ng-model="rdiName"></input>
           <button type="submit">RDi Add</button>
+          <button type="submit">Di Sav</button>
+          <button  ng-click="save();">Save</button>
  
-          <button type="submit" ng-click="list();">List</button>
-          <button type="submit" ng-click="search();">Search</button>
+          <button  ng-click="list();">List</button>
+          <input type="text" placeholder="query" ng-model="rdiQuery"></input>
+          <button  ng-click="search();">Search</button>
+          
+          <a href="http://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/advanced" target="blank">list Codes</a>
+          
         </form> 
         
         <hr/>
@@ -76,37 +82,26 @@ table tr:nth-child(even) {
         <br/>        
           <a href="{{rdi.url}}" target="blank"> {{rdi.name}} </a>
     </td>
-    <td><input type="checkbox" name="vehicle" value="Bike"> Mad1
-        <input type="checkbox" name="vehicle" value="Bike"> Happy1
+    <td>
+    <!-- video attributes    -->
+        <input type="checkbox" name="mad"       value="Mad"> Mad
+        <input type="checkbox" name="happy"     value="Happy"> Happy
         <br/>
-        <input type="checkbox" name="vehicle" value="Bike"> Mad2
-        <input type="checkbox" name="vehicle" value="Bike"> Happy2
-                <br/>
-        <input type="checkbox" name="vehicle" value="Bike"> Mad3
-        <input type="checkbox" name="vehicle" value="Bike"> Happy3
+        <input type="checkbox" name="pist off"  value=" Pist off"> Pist off
+        <input type="checkbox" name="glad"      value="Glad"> Glad
+        <br/>
+        <input type="checkbox" name="angry"     value="Angry"> Angry
+        <input type="checkbox" name="good mood" value="Good Mood"> Good Mood
     </td>
     <td>
-
-    <textarea rows="4" cols="50">
-    What do you want to tell about this video.
-</textarea>
-
+         <textarea ng-model="rdi.name22" placeholder="Describe the ___" style="height:40px; width:300px;">
+        </textarea>
+        <div ng-click="saveDescription(rdi.name,$index,rdi.name22)">save</div>
     </td>
   </tr>
 </table>
-    
-    
-    <!--
-    <br/>fuck<br/>
-    <span  style="color:red"> {{name}}{{rdi.fuck[0].name}}</span> 
-    <br/>fuckyou<br/>
-    <span > Results: {{rdi.fuck}} {{rdi.fuck.length}} p</span>
--->
 </div>
 
-
-        
-  
   </div>  
 
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
