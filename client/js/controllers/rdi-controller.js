@@ -95,8 +95,8 @@ console.log("BB " + sss );
 
     });
 /**************/
-date = new Date();
-$scope.rdi.push({name: 'neQ '+ date.getTime()});
+//date = new Date();
+//$scope.rdi.push({name: 'neQ '+ date.getTime()});
 
   }
   
@@ -117,6 +117,8 @@ $scope.rdi = '"asdf":"you"';
     //alert("key = " + key + "\n_______________\n" + $scope.rdi[0].name + "\n" + $scope.rdi[0].name22);
  
     var retval = [];
+    var top    = [];
+    var bottom = [];
     var a = $scope.rdi; //["a", "b", "c"];
         a.forEach(function(entry) {
             //console.log(entry.name22.toLowerCase() == key.toLowerCase());
@@ -124,11 +126,19 @@ $scope.rdi = '"asdf":"you"';
             if( ('name22' in entry) && (entry.name22.toLowerCase() == key.toLowerCase()) )
             {
                 // append new value to the array
-                retval.push(entry);
+                top.push(entry);                
+            }
+            else
+            {
+                bottom.push(entry);
             }
         });
         
-        //alert("list search item 0 "+ retval.length);
+        retval = top.concat(bottom);
+        //retval.push(bottom);
+
+        
+        alert("retval.length =  "+ retval.length);
         //console.log(retval);
     return retval;
   }
