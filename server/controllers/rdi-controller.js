@@ -1,5 +1,6 @@
 var Di= require('../models/di');
 var Rdi= require('../models/rdi');
+var RdiCode= require('../models/rdicode');
 var mongoose = require('mongoose');
 
 module.exports.create = function (req, res) {
@@ -13,6 +14,48 @@ console.log('server inside create rdi-controller.js');
 
 
 
+}
+
+module.exports.saveCodes = function (req, res) {
+    console.log('SERVER rdi-controller.js saveCodes');
+    console.log("req = \n" + req);
+    
+    //var str = JSON.stringify(req, null, 2); 
+    //console.log("req str = \n" + req.body);
+     //console.log(req.body);
+     //console.log(req.body[0].name);
+     var row = req.body[0];
+     var rows = req.body;
+     //console.log(row);     
+     
+     // save to db
+     /*****/
+    rows.forEach(function(entry) {
+        console.log(entry);
+        var rrr = new RdiCode(entry);
+        rrr.save(function (err, result) {
+            if (err) return console.error(err);
+      
+            console.dir(rrr);
+        });
+        
+    });
+     
+    //var rc= new RdiCode(row);
+    //var rc= new RdiCode(rows);
+    //rc.save(function (err, result) {
+    //  if (err) return console.error(err);
+      
+    //  console.dir(rc);
+      
+    //res.json(result);
+    //});
+    /******/
+    
+    var results = {};
+    
+    res.json(results);
+//app.post('/rdi/codes', rdiController.saveCodes);
 }
 
 module.exports.listwtf = function (req, res) {

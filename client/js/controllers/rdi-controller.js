@@ -7,8 +7,30 @@ app.controller('rdiController', ['$scope', '$http', '$resource', function ($scop
   ]
 
 
+    // Save
+$scope.save = function () {
+    console.log("__ scope.save = function ()");
+    console.log($scope.rdi[0]._id + "\n" +  $scope.rdi[0].name + "\n" + $scope.rdi[0].name22);
+    
+    // $http.get("/rdi/fuck22")
+    //$http.post('/rdi/codes', {msg:'hello word!'}).
+    
+    $http.post('/rdi/codes', $scope.rdi).
+    then(function(response) {
+        // this callback will be called asynchronously
+        // when the response is available
+    }, function(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        console.log("******ERROR");
+        
+    });
+    
+    //$scope.rdi = '"asdf":"you"';    
+}
+
 $scope.search = function () {
-    var key = $scope.rdiQuery.trim().toLowerCase();
+    var key = ($scope.rdiQuery === undefined ) ? "" : $scope.rdiQuery.trim().toLowerCase();
     
         //alert("***scope = " + $scope.rdi[0].name + "\n" + $scope.rdi[0].name22); 
         
@@ -86,7 +108,7 @@ console.log("__.js$scope.createRDi");
  //$scope.di.push({name: $scope.diName });
 console.log("BB createRDi");
 
-/******/
+/******
     di.$save(function (result) {
      //$scope.rdi.push(result);
       $scope.rdiName = '';
@@ -94,24 +116,13 @@ var sss = JSON.stringify(result);
 console.log("BB " + sss );
 
     });
-/**************/
+**************/
 //date = new Date();
 //$scope.rdi.push({name: 'neQ '+ date.getTime()});
 
   }
   
-  
-  
-  // Save
-    $scope.save = function () {
-console.log("__ scope.save = function ()");
-console.log($scope.rdi[0].name);
-
-
-$scope.rdi = '"asdf":"you"';
-
-  }
-  
+    
   function listWhereCodeEquals(key)
   {
     //alert("key = " + key + "\n_______________\n" + $scope.rdi[0].name + "\n" + $scope.rdi[0].name22);
@@ -135,10 +146,8 @@ $scope.rdi = '"asdf":"you"';
         });
         
         retval = top.concat(bottom);
-        //retval.push(bottom);
-
         
-        alert("retval.length =  "+ retval.length);
+        //alert("retval.length =  "+ retval.length);
         //console.log(retval);
     return retval;
   }

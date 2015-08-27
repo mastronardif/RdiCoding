@@ -51,7 +51,8 @@ app.get('/api/dis',      diController.list);
 app.post('/api/dis',     diController.create);
 app.post('/api/rdi',     rdiController.listwtf);
 app.get('/rdi/fuck',     rdiController.listwtf);
-//app.get('/rdi/fuck',     rdiController.listwtf);
+
+app.post('/rdi/codes', rdiController.saveCodes);
 
 //app.get('/api/rdi/fuck',     rdiController.listwtf);
 
