@@ -33,11 +33,23 @@ module.exports.saveCodes = function (req, res) {
     rows.forEach(function(entry) {
         console.log(entry);
         var rrr = new RdiCode(entry);
-        rrr.save(function (err, result) {
+        /*****/
+        //RdiCode.update({_id: entry._id}, {$set: {name22: entry.name22||''}}, 
+        //RdiCode.update({_id: entry._id}, {$set: {entry}}, 
+        RdiCode.findOneAndUpdate({_id: entry._id}, entry,
+{ upsert: true },
+        function (err, result) {
             if (err) return console.error(err);
       
             console.dir(rrr);
         });
+        /******/
+        /*****
+        RdiCode.findByIdAndUpdate(entry._id, { $set: { name: 'FUCK' }}, function (err, tank) {
+  if (err) return handleError(err);
+  //res.send(tank);
+});
+******/
         
     });
      
