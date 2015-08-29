@@ -77,7 +77,7 @@ console.log('inside rdi-controller.js listwtf');
 
 console.log("req = \n" + req);
 
-Rdi.find(function (err, results) {
+RdiCode.find(function (err, results) {
   if (err) return console.error(err);
 //  console.log(results);
   
