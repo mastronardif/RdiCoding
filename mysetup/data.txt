@@ -1,0 +1,18 @@
+{
+        "_id" : ObjectId("55b15a4461c5976f7b994918"),
+        "name" : "Walk with teddy",
+        "img" : "https://i.ytimg.com/vi/2jipF9cyZcQ/default.jpg",
+        "url" : "https://www.youtube.com/watch?v=2jipF9cyZcQ&amp;index=4&amp;list=PLaaxGO6E_rXfUljNED4eNLYxjsrObgZ6q",
+        "__v" : 0,
+        "name22" : "3"
+}
+{
+        "_id" : ObjectId("55b15a4461c5976f7b994921"),
+        "name" : "end",
+        "img" : "",
+        "url" : "",
+        "__v" : 0,
+        "name22" : "o"
+}
+
+//mongoimport --db zips "\MongoDB 2.6 Standard\mongodb\zips.json"
