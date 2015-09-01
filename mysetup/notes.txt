@@ -7,7 +7,7 @@ C:\Program Files\MongoDB\Server\3.0\bin
 
 "C:\Program Files\MongoDB\Server\3.0\bin\mongoexport" --db mean-demo --collection rdicode --out rdicode.json
 
-"C:\Program Files\MongoDB\Server\3.0\bin\mongoimport" --db mean-demo --collection fuck --file rdicode.json
+"C:\MongoDB\Server\3.0\bin\mongoimport" --db mean-demo --collection rdiCode --file rdicode.json
 
 
 db.rdi.count
