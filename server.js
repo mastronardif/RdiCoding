@@ -1,9 +1,10 @@
+"use strict"
 var express           = require('express'),
     app               = express(),
     bodyParser        = require('body-parser'),
     mongoose          = require('mongoose'),
-    meetupsController = require('./server/controllers/meetups-controller');
-    diController      = require('./server/controllers/di-controller');
+    meetupsController = require('./server/controllers/meetups-controller'),
+    diController      = require('./server/controllers/di-controller'),
 rdiController      = require('./server/controllers/rdi-controller');
 
 mongoose.connect('mongodb://localhost:27017/mean-demo');
